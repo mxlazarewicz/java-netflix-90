@@ -1,18 +1,15 @@
 package pl.yellowduck.netflix90.films;
 
 import pl.yellowduck.netflix90.common.Gender;
-import pl.yellowduck.netflix90.common.Person;
 
-import javax.persistence.Entity;
-import javax.persistence.Enumerated;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Director")
 public class Director {
 
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
 
     private String firstname;

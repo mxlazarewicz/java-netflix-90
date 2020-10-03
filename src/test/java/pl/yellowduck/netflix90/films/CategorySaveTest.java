@@ -5,12 +5,12 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.junit.Test;
-import pl.yellowduck.netflix90.common.Gender;
 
-public class DirectorSaveTest {
+public class CategorySaveTest {
+
 
     @Test
-    public void SaveDirector(){
+    public void SaveDirector() {
 
         SessionFactory sessionFactory = new Configuration()
                 .configure("hibernate.cfg.xml")
@@ -22,12 +22,10 @@ public class DirectorSaveTest {
         Transaction tx = null;
         try (Session session = sessionFactory.openSession()) {
             tx = session.beginTransaction();
-            Director director = new Director();
-            director.setId(1L);
-            director.setFirstname("Jan");
-            director.setLastname("Kowalski");
-            director.setGender(Gender.MALE);
-            session.save(director);
+
+            Category category = new Category("Thriller", "Thriller movie type");
+            session.persist(category);
+
             tx.commit();
         } catch (Exception ex) {
             if (tx != null && !tx.getRollbackOnly()) {

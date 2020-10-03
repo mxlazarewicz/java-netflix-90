@@ -1,31 +1,31 @@
 package pl.yellowduck.netflix90.films;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
-
+import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.Objects;
 import java.util.Set;
 
-@Getter
+@Entity
+@Table(name = "VideoCasette")
 public class VideoCassette {
 
-  private String id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private Long id;
+
   private BigDecimal price;
+
   private String title;
+
   private Director director;
+
   private Category category;
+
   private Set<Actor> actors;
 
-  @JsonCreator
-  public VideoCassette(@JsonProperty("id") String id,
-                       @JsonProperty("price") BigDecimal price,
-                       @JsonProperty("title") String title,
-                       @JsonProperty("director") Director director,
-                       @JsonProperty("category") Category category,
-                       @JsonProperty("actors") Set<Actor> actors) {
-    this.id = id;
+  public VideoCassette() {
+  }
+
+  public VideoCassette(BigDecimal price, String title, Director director, Category category, Set<Actor> actors) {
     this.price = price;
     this.title = title;
     this.director = director;
@@ -33,36 +33,51 @@ public class VideoCassette {
     this.actors = actors;
   }
 
-  public void printOut() {
-    // print casette data with below pattern
-    //    | ID | Title | Category | Price | Director | Actors |
-    StringBuilder builder = new StringBuilder();
-    builder.append("|")
-        .append(this.id)
-        .append("|")
-        .append(this.title)
-        .append("|")
-        .append(this.category)
-        .append("|")
-        .append(this.price)
-        .append("|")
-        .append(this.director.toString())
-        .append("|")
-        .append(this.actors)
-        .append("|");
-    System.out.println(builder.toString());
+  public Long getId() {
+    return id;
   }
 
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    VideoCassette that = (VideoCassette) o;
-    return Objects.equals(id, that.id);
+  public void setId(Long id) {
+    this.id = id;
   }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(id);
+  public BigDecimal getPrice() {
+    return price;
+  }
+
+  public void setPrice(BigDecimal price) {
+    this.price = price;
+  }
+
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  public Director getDirector() {
+    return director;
+  }
+
+  public void setDirector(Director director) {
+    this.director = director;
+  }
+
+  public Category getCategory() {
+    return category;
+  }
+
+  public void setCategory(Category category) {
+    this.category = category;
+  }
+
+  public Set<Actor> getActors() {
+    return actors;
+  }
+
+  public void setActors(Set<Actor> actors) {
+    this.actors = actors;
   }
 }
