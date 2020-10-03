@@ -27,7 +27,6 @@ public class VideoCassetteCatalogTest {
         // given
         IVideoCassetteCatalog catalog = new VideoCassetteCatalog();
         VideoCassette videoCassette = new VideoCassette(
-                "V001",
                 BigDecimal.valueOf(20),
                 "The room",
                 new Director("Tommy", "Wiseau", Gender.MALE),
@@ -47,7 +46,6 @@ public class VideoCassetteCatalogTest {
         // given
         IVideoCassetteCatalog catalog = new VideoCassetteCatalog();
         VideoCassette videoCassette1 = new VideoCassette(
-                "V001",
                 BigDecimal.valueOf(20),
                 "The room",
                 new Director("Tommy", "Wiseau", Gender.MALE),
@@ -55,7 +53,6 @@ public class VideoCassetteCatalogTest {
                 Set.of(new Actor("Tommy", "Wiseau", Gender.MALE)));
 
         VideoCassette videoCassette2 = new VideoCassette(
-                "V002",
                 BigDecimal.valueOf(20),
                 "The room",
                 new Director("Tommy", "Wiseau", Gender.MALE),

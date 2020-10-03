@@ -18,7 +18,6 @@ public class VideoCassetteTest {
     public void shouldVideoCassetteIsEqual() {
         // given
         VideoCassette videoCassette1 = new VideoCassette(
-                "V001",
                 BigDecimal.valueOf(20),
                 "The room",
                 new Director("Tommy", "Wiseau", Gender.MALE),
@@ -26,7 +25,6 @@ public class VideoCassetteTest {
                 Set.of(new Actor("Tommy", "Wiseau", Gender.MALE)));
 
         VideoCassette videoCassette2 = new VideoCassette(
-                "V001",
                 BigDecimal.valueOf(20),
                 "The room",
                 new Director("Tommy", "Wiseau", Gender.MALE),
