@@ -1,19 +1,27 @@
 package pl.yellowduck.netflix90.films;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import pl.yellowduck.netflix90.common.Gender;
 import pl.yellowduck.netflix90.common.Person;
 
-@Getter
-public class Actor extends Person {
+import javax.persistence.*;
 
-  @JsonCreator
-  public Actor(@JsonProperty("firstname") String firstname,
-               @JsonProperty("lastname") String lastname,
-               @JsonProperty("gender") Gender gender) {
+@Entity
+@Getter
+@Table(name = "actor")
+public class Actor extends Person {
+ @Id
+ @GeneratedValue(strategy = GenerationType.AUTO)
+
+  private Integer id;
+
+  public Actor (String firstname,
+              String lastname,
+               Gender gender) {
     super(firstname, lastname, gender);
+  }
+
+  public Actor() {
   }
 
   @Override
