@@ -2,6 +2,7 @@ package pl.yellowduck.netflix90;
 
 import pl.yellowduck.netflix90.films.Category;
 
+/*
 public class Main3 {
 
   public static void main(String[] args) {
@@ -23,3 +24,4 @@ public class Main3 {
     System.out.println("print ordinal " + comedy.ordinal());
   }
 }
+*/

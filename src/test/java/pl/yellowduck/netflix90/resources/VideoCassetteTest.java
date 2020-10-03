@@ -22,7 +22,7 @@ public class VideoCassetteTest {
                 BigDecimal.valueOf(20),
                 "The room",
                 new Director("Tommy", "Wiseau", Gender.MALE),
-                Category.DRAMA,
+                new Category( "Drama", "Drama movie type"),
                 Set.of(new Actor("Tommy", "Wiseau", Gender.MALE)));
 
         VideoCassette videoCassette2 = new VideoCassette(
@@ -30,7 +30,7 @@ public class VideoCassetteTest {
                 BigDecimal.valueOf(20),
                 "The room",
                 new Director("Tommy", "Wiseau", Gender.MALE),
-                Category.DRAMA,
+                new Category( "Drama", "Drama movie type"),
                 Set.of(new Actor("Tommy", "Wiseau", Gender.MALE)));
         // when
         boolean result = videoCassette1.equals(videoCassette2);
