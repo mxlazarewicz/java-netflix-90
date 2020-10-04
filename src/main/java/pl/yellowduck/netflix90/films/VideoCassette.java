@@ -15,11 +15,13 @@ public class VideoCassette {
   private BigDecimal price;
 
   private String title;
-
+  @ManyToOne
   private Director director;
 
+  @ManyToOne
   private Category category;
 
+  @OneToMany
   private Set<Actor> actors;
 
   public VideoCassette() {
