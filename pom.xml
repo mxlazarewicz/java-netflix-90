@@ -11,6 +11,7 @@
     <java.version>11</java.version>
     <hibernate.version>5.4.21.Final</hibernate.version>
     <mysql.version>8.0.21</mysql.version>
+    <javafx.version>14</javafx.version>
   </properties>
 
   <dependencies>
@@ -74,6 +75,21 @@
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-entitymanager</artifactId>
       <version>${hibernate.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-base</artifactId>
+      <version>14</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-fxml</artifactId>
+      <version>14</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>14</version>
     </dependency>
   </dependencies>
 

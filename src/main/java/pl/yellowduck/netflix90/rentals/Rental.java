@@ -2,12 +2,20 @@ package pl.yellowduck.netflix90.rentals;
 
 import lombok.Getter;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+@Entity
 
 @Getter
 //@RequiredArgsConstructor
+//
+@Table(name="rentals")
 public class Rental {
+
+
+
 
     private final int identity;
     private final String clientId;
